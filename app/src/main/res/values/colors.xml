@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
+    <color name="colorAccent">#00B900</color>
+    <color name="bottom_nav_select">#00B900</color>
+
+    //check network
+    <color name="colorStatusConnected">#43A047</color>
+    <color name="colorStatusNotConnected">#D32F2F</color>
+
+    //blog
+    <color name="gray">#D3BAB7B7</color>
+    <color name="white_gray">#D3FBF8F8</color>
+    <color name="black">#000</color>
+
+    //profle activity
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+</resources>

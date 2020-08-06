@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_home"
+        android:title="Account" />
+    <item xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/navi_item_create_notifications_sound"
+        android:title="Dark Theme"
+        android:icon="@drawable/ic_home"
+        app:actionLayout="@layout/menu_theme_switch"
+        app:showAsAction="always" />
+
+</menu>
