@@ -1,5 +1,6 @@
 package com.vmyan.myantrip.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.smarteist.autoimageslider.SliderAnimations
 import com.vmyan.myantrip.data.entities.Post
 import com.vmyan.myantrip.R
+import com.vmyan.myantrip.ui.Profile
 import kotlinx.android.synthetic.main.post_recyclerviews.view.*
 
 class PostListAdapter(private val listener: PostListAdapter.ItemClickListener,private val postList:MutableList<Post>) : RecyclerView.Adapter<PostListAdapter.BlogViewHolder>(){
@@ -76,7 +78,9 @@ class PostListAdapter(private val listener: PostListAdapter.ItemClickListener,pr
             itemView.imageSlider.setScrollTimeInSec(1000);
 
             itemView.img_profile.setOnClickListener{
-                println("${post.post_id}")
+                val intent = Intent(view.context, Profile::class.java)
+                intent.putExtra("user_id",post.user_id)
+                view.context.startActivity(intent)
 
             }
             itemView.btn_like.setOnClickListener{
