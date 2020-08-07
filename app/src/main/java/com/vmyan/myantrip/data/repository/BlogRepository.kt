@@ -31,8 +31,8 @@ class BlogRepository @Inject constructor(
     }
     fun getPostByUserId(userId:Int):Flow<Resource<List<ProfilePost>>>{
         return object : NetworkBoundRepository<List<ProfilePost>,List<ProfilePost>>(){
-            override suspend fun saveRemoteData(response: List<ProfilePost>) =
-                profilePostDao.insertAllPost(response)
+            override suspend fun saveRemoteData(response: List<ProfilePost>){}
+//                profilePostDao.insertAllPost(response)
 
             override fun fetchFromLocal(): Flow<List<ProfilePost>> = profilePostDao.getAllPost()
 
