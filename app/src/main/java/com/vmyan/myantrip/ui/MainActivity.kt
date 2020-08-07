@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.infideap.drawerbehavior.Advance3DDrawerLayout
+import com.orhanobut.hawk.Hawk
 import com.vmyan.myantrip.R
 import com.vmyan.myantrip.ui.fragment.*
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity(),NavigationView.OnNavigationItemSelected
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_nav_layout)
+
+        Hawk.init(applicationContext).build()
 
         drawer = findViewById<View>(R.id.drawer_layout) as Advance3DDrawerLayout
 

@@ -10,6 +10,7 @@ import androidx.appcompat.widget.AppCompatSpinner
 import androidx.fragment.app.*
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.*
+import com.orhanobut.hawk.Hawk
 import com.vmyan.myantrip.R
 import com.vmyan.myantrip.ui.adapter.WordAdapter
 import com.vmyan.myantrip.ui.viewmodel.CommuViewModel
@@ -30,7 +31,7 @@ class Communication : Fragment() , WordAdapter.ItemClickListener{
     private lateinit var wordAdapter: WordAdapter
 
     init {
-//        language.value = Hawk.get("language","english")
+        language.value = Hawk.get("language","english")
     }
 
     override fun onCreateView(
@@ -65,11 +66,13 @@ class Communication : Fragment() , WordAdapter.ItemClickListener{
         spinner.adapter = adapter
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(p0: AdapterView<*>?) {
-//                language.value = Hawk.get("language","english")
+                language.value = Hawk.get("language","myanmar")
             }
 
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 language.value = languageList[p2]
+                Hawk.put("language",language.value)
+                wordAdapter.notifyDataSetChanged()
             }
         }
     }
