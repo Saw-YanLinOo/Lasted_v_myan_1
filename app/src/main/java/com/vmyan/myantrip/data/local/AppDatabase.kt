@@ -8,8 +8,9 @@ import androidx.room.TypeConverters
 import com.vmyan.myantrip.data.entities.*
 import com.vmyan.myantrip.utils.Constants
 
-@Database(entities = [Word::class,Post::class,SubPlaceCategory::class, PlaceCategory::class, Place::class], version = Constants.DB_VERSION, exportSchema = false)
+@Database(entities = [ProfilePost::class,Word::class,Post::class,SubPlaceCategory::class, PlaceCategory::class, Place::class], version = Constants.DB_VERSION, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
+    abstract fun profilePostDao() : ProfilePostDao
     abstract fun wordDao() : WordDao
     abstract fun postDao() : PostDao
     abstract fun subPlaceCategoryDao(): SubPlaceCategoryDao

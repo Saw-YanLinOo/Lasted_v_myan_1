@@ -62,6 +62,10 @@ object AppModule {
 
     @Singleton
     @Provides
+    fun provideProfilePostDao(db: AppDatabase) = db.profilePostDao()
+
+    @Singleton
+    @Provides
     fun provideHomeRepository(apiService: ApiService,
                                 subPlaceCategoryDao: SubPlaceCategoryDao,
                                 placeCategoryDao: PlaceCategoryDao,
@@ -71,8 +75,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideBlogRepository(apiService: ApiService,
-                                postDao: PostDao )=
-        BlogRepository(apiService, postDao)
+                                postDao: PostDao,
+                                profilePostDao: ProfilePostDao)=
+        BlogRepository(apiService, postDao,profilePostDao)
 
     @Singleton
     @Provides

@@ -15,7 +15,6 @@ class Profile : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
 
         id = intent.getIntExtra("user_id",1)
-
         Toast.makeText(applicationContext,"user_id -> ${id}", Toast.LENGTH_SHORT).show()
 
         setSupportActionBar(findViewById(R.id.toolbar_p))

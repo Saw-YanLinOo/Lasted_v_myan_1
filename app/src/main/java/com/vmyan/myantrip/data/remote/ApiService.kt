@@ -4,6 +4,7 @@ import com.vmyan.myantrip.data.entities.*
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiService {
     @GET("/myanTrip/public/api/sub_place_categories")
@@ -26,6 +27,9 @@ interface ApiService {
 
     @GET("/getAllPost.php")
     suspend fun getAllPost() : Response<List<Post>>
+
+    @GET("getPostByUserId.php")
+    suspend fun getPostByUserId(@Query("user_id") user_id: Int) : Response<List<ProfilePost>>
 
     @GET("/words.php")
     suspend fun getWord() : Response<List<Word>>
