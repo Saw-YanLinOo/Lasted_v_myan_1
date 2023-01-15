@@ -1,5 +1,5 @@
-# Lasted_v_myan_1
-MyanTripForCommunicationAndBlog
+# Team VMyan
+MyanTrip application
 
 KDDI Fundation Application Content
 
